@@ -1,0 +1,233 @@
+:root {
+  --bg-color: #0d0d0d;
+  --card-bg: #1c1c1e;
+  --primary-yellow: #facc15;
+  --text-main: #ffffff;
+  --text-sub: #a1a1aa;
+  --input-bg: #27272a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.login-container {
+  position: relative;
+  width: 750px;
+  height: 420px;
+  background-color: #121212;
+  border-radius: 16px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Left Side: Lamp */
+.lamp-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+}
+
+.lamp-light {
+  position: absolute;
+  top: 10%;
+  left: -20%;
+  width: 140%;
+  height: 100%;
+  background: conic-gradient(from 150deg at 50% 0%, rgba(250, 204, 21, 0.35) 0deg, rgba(250, 204, 21, 0) 60deg);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.lamp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.lamp-shade {
+  width: 100px;
+  height: 70px;
+  background: #2a2a2e;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  border-bottom: 3px solid var(--primary-yellow);
+}
+
+.lamp-stand {
+  width: 8px;
+  height: 140px;
+  background: #3f3f46;
+}
+
+.lamp-base {
+  width: 70px;
+  height: 12px;
+  background: #27272a;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Pull String */
+.pull-string {
+  position: absolute;
+  top: 65px;
+  right: 25px;
+  cursor: pointer;
+  transition: transform 0.1s linear;
+}
+
+.pull-string:active {
+  transform: translateY(10px);
+}
+
+.pull-string .string {
+  width: 2px;
+  height: 45px;
+  background: #a1a1aa;
+}
+
+.pull-string .handle {
+  width: 10px;
+  height: 10px;
+  background: var(--primary-yellow);
+  border-radius: 50%;
+  margin-left: -4px;
+}
+
+/* Right Side: Form */
+.form-box {
+  flex: 1.2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-main);
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.form-box h2 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--text-sub);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  background: var(--input-bg);
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-yellow);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-yellow);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #eab308;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 10px;
+  margin: 20px 0 14px 0;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #3f3f46;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+.social-login {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-social {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: var(--input-bg);
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-social img {
+  width: 16px;
+  height: 16px;
+}
+
+/* OFF State Styles */
+.login-container.is-off .lamp-light {
+  opacity: 0;
+}
+
+.login-container.is-off .form-box {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
