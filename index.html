@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Lamp Login Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="login-container" id="loginContainer">
+    <!-- Left Side: Lamp -->
+    <div class="lamp-box">
+      <!-- Lamp Light Cone -->
+      <div class="lamp-light" id="lampLight"></div>
+
+      <!-- Lamp Graphic -->
+      <div class="lamp">
+        <div class="lamp-shade"></div>
+        <div class="lamp-stand"></div>
+        <div class="lamp-base"></div>
+
+        <!-- Pull String Switch -->
+        <div class="pull-string" id="lampSwitch" title="Pull to toggle light">
+          <div class="string"></div>
+          <div class="handle"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div class="form-box" id="formBox">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Enter your details to access your account</p>
+
+      <form class="login-form" onsubmit="event.preventDefault();">
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" placeholder="Username" required />
+        </div>
+
+        <div class="input-group">
+          <span class="icon">✉️</span>
+          <input type="email" placeholder="Email Address" required />
+        </div>
+
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" placeholder="Password" required />
+        </div>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+
+      <div class="divider">
+        <span>OR CONTINUE WITH</span>
+      </div>
+
+      <div class="social-login">
+        <button class="btn-social">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+          Google
+        </button>
+        <button class="btn-social">
+          <img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub">
+          GitHub
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
